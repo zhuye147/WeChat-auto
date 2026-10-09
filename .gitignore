@@ -1,0 +1,35 @@
+# ===== 本地配置（含飞书应用密钥，切勿提交）=====
+config.yaml
+
+# ===== 运行时数据（含业务/客户信息，切勿提交）=====
+monitor.log
+monitor.log.*
+processed_state.json
+monitor.lock
+temp_images/
+wxauto_logs/
+
+# ===== 第三方离线安装包（二进制，勿提交）=====
+wxauto4离线安装包.zip
+
+# ===== 非项目文件（调试脚本、历史日志、缓存、临时图片、离线安装包）=====
+其他文件/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+
+# ===== 编辑器 / 系统 =====
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+desktop.ini

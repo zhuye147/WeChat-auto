@@ -1,0 +1,51 @@
+# ============================================================
+#  客服数据监听 - 配置文件模板
+#  使用方法：复制本文件为 config.yaml，再填入自己的真实信息
+#      copy config.yaml.example config.yaml
+#  config.yaml 已被 .gitignore 忽略，不会被提交到 GitHub
+# ============================================================
+
+# ---------- 飞书配置 ----------
+feishu:
+  # 飞书自建应用凭证：飞书开放平台 -> 开发者后台 -> 凭证与基础信息
+  app_id: "cli_xxxxxxxxxxxxxxxx"
+  app_secret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  # 电子表格 token：打开表格链接 https://xxx.feishu.cn/sheets/<这里的这一段>
+  spreadsheet_token: "xxxxxxxxxxxxxxxxxxxxxxxx"
+  # 工作表 ID（可留空；留空时自动使用第一个工作表）
+  sheet_id: ""
+
+# ---------- 微信配置 ----------
+wechat:
+  # 需要监听的微信群名称，需与微信客户端里显示的群名一致
+  groups:
+    - "示例群-1"
+    - "示例群-2"
+  # 消息中必须提到的机器人／客服昵称：任一命中才会被采集
+  # 填你要 @ 的那个客服/机器人昵称即可，不要求带 @ 符号
+  bot_aliases:
+    - "示例客服小助手"
+  # 消息还必须包含的业务关键字：任一命中才会被采集
+  keywords:
+    - "业务办理"
+  # 轮询间隔（秒）
+  check_interval: 60
+
+# ---------- 消息解析字段 ----------
+# 预留项：当前解析与写表的字段由代码内的定义决定，
+# 修改这里不会改变实际解析行为，保留是为了向后兼容旧配置。
+fields:
+  - "学员编号"
+  - "姓名"
+  - "班级编号"
+  - "订单号"
+  - "业务办理"
+  - "备注"
+  - "群聊"
+  - "发送人"
+
+# ---------- 日志 ----------
+logging:
+  # DEBUG / INFO / WARNING / ERROR
+  level: "DEBUG"
+  file: "monitor.log"
